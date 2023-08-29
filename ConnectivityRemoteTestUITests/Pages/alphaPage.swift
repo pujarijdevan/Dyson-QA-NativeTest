@@ -16,6 +16,14 @@ class alphaPage{
         var connectedText: XCUIElement {
             return app.staticTexts["Connected"]
         }
+        
+        var unableToConnectText: XCUIElement {
+            return app.staticTexts["Unable To Connect"]
+        }
+    
+        var noInternetConnectionMessage: XCUIElement {
+            return app.staticTexts["An internet connection cannot be made"]
+        }
 
         var connectToInternet: XCUIElement {
             return app.staticTexts["You are connected to the internet"]
@@ -37,6 +45,8 @@ class alphaPage{
     var connectivityPageTitle: XCUIElement {
     return app.navigationBars["Connectivity"].staticTexts["Connectivity"]
     }
+    
+    
 
 }
     

@@ -13,39 +13,55 @@ class weatherScreen{
     }
     
     var titleWeather: XCUIElement {
-            return app.staticTexts["Weather"]
-        }
-        
-        var weatherDescriptionLabel: XCUIElement {
-            return app.staticTexts["weather_description_label"]
-        }
-        
-        var temperatureLabel: XCUIElement {
-            return app.staticTexts["Temperature"]
-        }
-        
-        var temperatureDescription: XCUIElement {
+        return app.staticTexts["Weather"]
+    }
+    
+    var weatherDescriptionLabel: XCUIElement {
+        return app.staticTexts["weather_description_label"]
+    }
+    
+    var temperatureLabel: XCUIElement {
+        return app.staticTexts["Temperature"]
+    }
+    
+    var temperatureDescription: XCUIElement {
         return app.staticTexts["temperature_description_label"]
-        }
+    }
     
-       var weatherIcon: XCUIElement {
+    var weatherIcon: XCUIElement {
         return app.images["weather_icon"]
-       }
+    }
     
-        var tempratureIcon: XCUIElement {
+    var tempratureIcon: XCUIElement {
         return app.images["temperature_icon"]
-        }
+    }
     
     
-        var doneButton: XCUIElement {
-            return app.buttons["Done"]
-        }
+    var doneButton: XCUIElement {
+        return app.buttons["Done"]
+    }
     
-        var weatherDisplayPageTitle: XCUIElement {
-            return app.navigationBars["Weather Data"].staticTexts["Weather Data"]
-        }
+    var weatherDisplayPageTitle: XCUIElement {
+        return app.navigationBars["Weather Data"].staticTexts["Weather Data"]
+    }
     
-        func dismissFinishedAlert() {
+    var weatherDataCollectionButton: XCUIElement {
+        return app.navigationBars["Weather Data"].buttons["Data Collection"]
+    }
+    
+    func getTemperatureValue() -> String {
+            return temperatureDescription.label
+    }
+    
+    func getweatherValue() -> String {
+            return weatherDescriptionLabel.label
+    }
+    
+    func tapDataCollectionButton() {
+        weatherDataCollectionButton.tap()
+    }
+    
+    func dismissFinishedAlert() {
         let finishedAlert = app.alerts["Finished"]
         
         if finishedAlert.waitForExistence(timeout: 10) {
@@ -53,6 +69,8 @@ class weatherScreen{
         } else {
             XCTFail("Finished alert did not appear within the specified timeout")
         }
+
+        
     }
 }
 

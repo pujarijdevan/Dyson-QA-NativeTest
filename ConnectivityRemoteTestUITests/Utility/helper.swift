@@ -14,5 +14,10 @@ class TestUtilities {
                 XCTFail("Element did not appear within the specified timeout")
             }
         }
+    static func validateTemperatureFormat(_ temperature: String) -> Bool {
+            let temperatureRegex = "\\d+\\.\\d+°C"
+            let temperatureRegexPredicate = NSPredicate(format: "SELF MATCHES %@", temperatureRegex)
+            return temperatureRegexPredicate.evaluate(with: temperature)
+        }
 }
 
