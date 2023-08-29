@@ -23,7 +23,29 @@ class ConnectivityRemoteTestUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(app.staticTexts["Connectivity"].exists)
+              // Verify icon
+              XCTAssert(app.staticTexts["Connected"].exists)
+              XCTAssert(app.staticTexts["You are connected to the internet"].exists)
+              XCTAssert(app.staticTexts["Fetch Data"].exists)
+
+              app.buttons["Fetch Data"].tap()
+
+              XCTAssert(app.staticTexts["Data Collection"].exists)
+              // Verify icon
+        //      XCTAssert(app.staticTexts["Data Collected"].exists)
+              XCTAssert(app.staticTexts["The weather data has been successfuly collected"].exists)
+              XCTAssert(app.staticTexts["View Results"].exists)
+
+              app.buttons["View Results"].tap()
+        //
+              XCTAssert(app.staticTexts["Weather"].exists)
+              XCTAssert(app.staticTexts["broken clouds"].exists)
+
+              XCTAssert(app.staticTexts["Temperature"].exists)
+        //      XCTAssert(app.staticTexts["27.90 C"].exists)
+
+              app.buttons["Done"].tap()
     }
 
     func testLaunchPerformance() throws {
