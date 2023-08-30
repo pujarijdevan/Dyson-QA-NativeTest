@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ConnectivityRemoteTestUITests.xctest' tests='6' failures='1'>
+  <testsuite name='ConnectivityRemoteTestUITests.ConnectivityRemoteTestUITests' tests='6' failures='1'>
+    <testcase classname='ConnectivityRemoteTestUITests.ConnectivityRemoteTestUITests' name='test_Launch_Performance' time='83.876'/>
+    <testcase classname='ConnectivityRemoteTestUITests.ConnectivityRemoteTestUITests' name='test_Memeory_Performance' time='22.353'/>
+    <testcase classname='ConnectivityRemoteTestUITests.ConnectivityRemoteTestUITests' name='test_verify_check_for_internet_connectivity_with_internet' time='3.642'/>
+    <testcase classname='ConnectivityRemoteTestUITests.ConnectivityRemoteTestUITests' name='test_verify_connectivitypage_without_internet'>
+      <failure message='XCTAssertTrue failed'>ConnectivityRemoteTestUITests/Tests/ConnectivityRemoteTestUITests.swift:72</failure>
+    </testcase>
+    <testcase classname='ConnectivityRemoteTestUITests.ConnectivityRemoteTestUITests' name='test_verify_tapping_viewResults_twice_doesnot_alter_weatherdata' time='11.047'/>
+    <testcase classname='ConnectivityRemoteTestUITests.ConnectivityRemoteTestUITests' name='test_verify_todays_weather' time='10.212'/>
+  </testsuite>
+</testsuites>
