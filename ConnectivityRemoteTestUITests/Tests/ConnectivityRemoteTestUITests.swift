@@ -5,6 +5,25 @@
 import XCTest
 
 class ConnectivityRemoteTestUITests: ConnectivtyRemoteTestBase {
+    
+    
+    /*Scenario: Chekc for internet connectivity with Wi-Fi on
+     Given User has enabled internet connection
+     When User launch the app
+     Then Check internet connectivty Message You are connected to Internet
+     AND Check the status to be Connected
+     AND Fetch Data button should be visisble
+     */
+    func test_verify_check_for_internet_connectivity() throws{
+        let alphaPage = alphaPage(app: app)
+        XCTAssert(alphaPage.connectedText.exists)
+        XCTAssert(alphaPage.connectivityPageTitle.exists)
+        XCTAssert(alphaPage.connectToInternet.exists)
+        XCTAssert(alphaPage.tickMarkIcon.exists)
+        XCTAssert(alphaPage.fetchDataButton.exists)
+        XCTAssert(alphaPage.fetchDataText.exists)
+    }
+    
 
     /*Scenario: Get the high level weather forecast
      Given I have an internet connection
@@ -54,7 +73,16 @@ class ConnectivityRemoteTestUITests: ConnectivtyRemoteTestBase {
         XCTAssert(alphaPage.unableToConnectText.exists)
     }
     
-    /*"Verify that tapping the 'View Results' button twice does not alter the displayed weather data."
+    /*"Sceanrio: Verify that tapping the 'View Results' button twice does not alter the displayed weather data."
+     Given User is connected to Internet
+     When I Lauch the APP and Tap on FetchData
+     When I tap on View Results
+     Then Weather information is displayed
+     AND Temperature data is displayed
+     When User taps on Back button
+     When User taps on View Results
+     Then check same weather and temperature data is displayed
+     
      */
     func test_verify_tapping_viewResults_twice_doesnot_alter_weatherdata(){
         let alphaPage = alphaPage(app: app)
@@ -82,14 +110,11 @@ class ConnectivityRemoteTestUITests: ConnectivtyRemoteTestBase {
     }
     
     
-    
-    func testsample(){
-        let app = XCUIApplication()
-        app.launch()
-        app.staticTexts["connectivity_title_label"].tap()
-    }
-    
-
+    /* Given you have installed the app
+     When you open the app
+     Then Meassure the time taken to launch the app should be less than or equal to 2seconds
+     AND Repeate the Cycle for 5 iteration
+     */
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
@@ -97,5 +122,20 @@ class ConnectivityRemoteTestUITests: ConnectivtyRemoteTestBase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    /* Given you have installed the app
+     When you open the app
+     Then Meassure the memeory consumed should be less than 90kb
+     AND Repeate the Cycle for 5 iteration
+     */
+    
+    func testMemeoryPerformance() throws{
+        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
+
+                   measure(metrics: [XCTMemoryMetric()]) {
+                       XCUIApplication().launch()
+                   }
+               }
     }
 }

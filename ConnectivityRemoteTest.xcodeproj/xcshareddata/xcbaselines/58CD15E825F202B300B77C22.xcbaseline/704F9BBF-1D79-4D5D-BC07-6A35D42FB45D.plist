@@ -11,7 +11,17 @@
 				<key>com.apple.dt.XCTMetric_ApplicationLaunch-AppLaunch.duration</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>1.848415</real>
+					<real>2.000000</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testMemeoryPerformance()</key>
+			<dict>
+				<key>com.apple.dt.XCTMetric_Memory.physical</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>90.112000</real>
 					<key>baselineIntegrationDisplayName</key>
 					<string>Local Baseline</string>
 				</dict>

@@ -98,7 +98,7 @@ final class BravoViewModel: ViewModel {
                     let model = try JSONDecoder().decode(WeatherPayload.self, from: data)
                     dataStore.payload = model
                     stateRelay.accept(.success)
-                    
+                    print(model)
                 case .failure(let error):
                     throw error
                 }
