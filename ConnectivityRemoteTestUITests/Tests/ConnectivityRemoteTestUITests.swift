@@ -14,7 +14,7 @@ class ConnectivityRemoteTestUITests: ConnectivtyRemoteTestBase {
      AND Check the status to be Connected
      AND Fetch Data button should be visisble
      */
-    func test_verify_check_for_internet_connectivity() throws{
+    func test_verify_check_for_internet_connectivity_with_internet() throws{
         let alphaPage = alphaPage(app: app)
         XCTAssert(alphaPage.connectedText.exists)
         XCTAssert(alphaPage.connectivityPageTitle.exists)
@@ -115,7 +115,7 @@ class ConnectivityRemoteTestUITests: ConnectivtyRemoteTestBase {
      Then Meassure the time taken to launch the app should be less than or equal to 2seconds
      AND Repeate the Cycle for 5 iteration
      */
-    func testLaunchPerformance() throws {
+    func test_Launch_Performance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
@@ -130,7 +130,7 @@ class ConnectivityRemoteTestUITests: ConnectivtyRemoteTestBase {
      AND Repeate the Cycle for 5 iteration
      */
     
-    func testMemeoryPerformance() throws{
+    func test_Memeory_Performance() throws{
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
 
                    measure(metrics: [XCTMemoryMetric()]) {

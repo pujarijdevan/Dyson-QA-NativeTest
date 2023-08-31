@@ -20,6 +20,20 @@
                ReferencedContainer = "container:ConnectivityRemoteTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "58CD15E825F202B300B77C22"
+               BuildableName = "ConnectivityRemoteTestUITests.xctest"
+               BlueprintName = "ConnectivityRemoteTestUITests"
+               ReferencedContainer = "container:ConnectivityRemoteTest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -37,6 +51,11 @@
                BlueprintName = "ConnectivityRemoteTestUITests"
                ReferencedContainer = "container:ConnectivityRemoteTest.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ConnectivtyRemoteTestBase">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
